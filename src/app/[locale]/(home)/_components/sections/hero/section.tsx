@@ -61,7 +61,7 @@ export const HeroSection = () => {
             className="w-full h-80 relative"
           >
             <Image
-              src="/ai/images/ai_man_finger.jpg"
+              src="/images/ai_man_finger.jpg"
               alt="AI Technology"
               fill
               sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
