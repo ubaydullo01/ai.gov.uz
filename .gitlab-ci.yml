@@ -1,0 +1,91 @@
+image: node:18-alpine
+
+stages:
+  - deploy
+
+deploy:dev:
+  stage: deploy
+  tags:
+    - uportal-test
+  image: docker:20.10.23
+  services:
+    - name: docker:20.10.23-dind
+  variables:
+    DOCKER_DRIVER: overlay2
+    DOCKER_HOST: tcp://docker:2375
+    DOCKER_TLS_CERTDIR: ""
+    VAULT_ADDRESS: $TEST_VAULT_ADDRESS
+    VAULT_TOKEN: $TEST_VAULT_TOKEN
+  cache:
+    key: ${CI_COMMIT_REF_SLUG}
+    paths:
+      - node_modules/
+  script:
+    #- docker compose down --rmi all
+    - '[ -f .env ] && rm .env || true'
+    - echo "$TEST_APP_ENV" > .env
+    #- docker compose up -d
+    - docker build -t ai-gov:$CI_COMMIT_SHORT_SHA .
+    - docker container rm -f ai-gov 2>/dev/null || true
+    - docker run -d --name ai-gov -p 55005:3000 -e NODE_ENV=production ai-gov:$CI_COMMIT_SHORT_SHA
+  only:
+    - main
+  when: manual
+
+deploy:stage:
+  stage: deploy
+  tags:
+    - uportal-stage
+  image: docker:20.10.23
+  services:
+    - name: docker:20.10.23-dind
+  variables:
+    DOCKER_DRIVER: overlay2
+    DOCKER_HOST: tcp://docker:2375
+    DOCKER_TLS_CERTDIR: ""
+    VAULT_ADDRESS: $STAGE_VAULT_ADDRESS
+    VAULT_TOKEN: $STAGE_VAULT_TOKEN
+  cache:
+    key: ${CI_COMMIT_REF_SLUG}
+    paths:
+      - node_modules/
+  script:
+    #- docker compose down --rmi all
+    - '[ -f .env ] && rm .env || true'
+    - echo "$STAGE_APP_ENV" > .env
+    #- docker compose up -d
+    - docker build -t ai-gov:$CI_COMMIT_SHORT_SHA .
+    - docker container rm -f ai-gov 2>/dev/null || true
+    - docker run -d --name ai-gov -p 55005:3000 -e NODE_ENV=production ai-gov:$CI_COMMIT_SHORT_SHA
+  only:
+    - main
+  when: manual
+
+deploy:prod:
+  stage: deploy
+  tags:
+    - uportal-prod
+  image: docker:20.10.23
+  services:
+    - name: docker:20.10.23-dind
+  variables:
+    DOCKER_DRIVER: overlay2
+    DOCKER_HOST: tcp://docker:2375
+    DOCKER_TLS_CERTDIR: ""
+    VAULT_ADDRESS: $PROD_VAULT_ADDRESS
+    VAULT_TOKEN: $PROD_VAULT_TOKEN
+  cache:
+    key: ${CI_COMMIT_REF_SLUG}
+    paths:
+      - node_modules/
+  script:
+    #- docker compose down --rmi all
+    - '[ -f .env ] && rm .env || true'
+    - echo "$PROD_APP_ENV" > .env
+    #- docker compose up -d
+    - docker build -t ai-gov:$CI_COMMIT_SHORT_SHA .
+    - docker container rm -f ai-gov 2>/dev/null || true
+    - docker run -d --name ai-gov -p 55005:3000 -e NODE_ENV=production ai-gov:$CI_COMMIT_SHORT_SHA
+  only:
+    - main
+  when: manual
