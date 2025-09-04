@@ -3,16 +3,6 @@ import createNextIntlPlugin from "next-intl/plugin";
 
 const nextConfig: NextConfig = {
   htmlLimitedBots: /.*/,
-  async redirects() {
-    return [
-      {
-        source: "/",
-        destination: "/ai/ru",
-        permanent: true,
-        basePath: false,
-      },
-    ];
-  },
   turbopack: {
     rules: {
       "*.svg": {
