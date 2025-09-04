@@ -2,8 +2,6 @@ import type { NextConfig } from "next";
 import createNextIntlPlugin from "next-intl/plugin";
 
 const nextConfig: NextConfig = {
-  basePath: "/ai",
-  assetPrefix: "/ai/",
   htmlLimitedBots: /.*/,
   async redirects() {
     return [
