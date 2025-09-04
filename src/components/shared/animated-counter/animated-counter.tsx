@@ -8,6 +8,7 @@ interface AnimatedCounterProps {
   duration?: number;
   suffix?: string;
   className?: string;
+  decimals?: number;
 }
 
 export const AnimatedCounter: React.FC<AnimatedCounterProps> = ({
@@ -15,6 +16,7 @@ export const AnimatedCounter: React.FC<AnimatedCounterProps> = ({
   duration = 2,
   suffix = "",
   className = "",
+  decimals = 0,
 }) => {
   const [count, setCount] = useState(0);
   const ref = useRef(null);
@@ -31,7 +33,8 @@ export const AnimatedCounter: React.FC<AnimatedCounterProps> = ({
       const progress = (timestamp - startTime) / (duration * 1000);
 
       if (progress < 1) {
-        setCount(Math.floor(end * progress));
+        const current = end * progress;
+        setCount(Number(current.toFixed(decimals)));
         animationFrame = requestAnimationFrame(animate);
       } else {
         setCount(end);
@@ -45,7 +48,7 @@ export const AnimatedCounter: React.FC<AnimatedCounterProps> = ({
         cancelAnimationFrame(animationFrame);
       }
     };
-  }, [end, duration, isInView]);
+  }, [end, duration, isInView, decimals]);
 
   return (
     <motion.div
