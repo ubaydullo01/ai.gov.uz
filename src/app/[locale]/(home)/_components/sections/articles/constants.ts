@@ -19,7 +19,7 @@ export const articles = [
     },
     // image:
     //   "https://images.unsplash.com/photo-1646153389640-958d7ba1a864?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHxtb2Rlcm4lMjBvZmZpY2UlMjBidWlsZGluZyUyMHRlY2glMjBzdGFydHVwfGVufDF8fHx8MTc1NjgyMjgyNHww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-    image: "/ai/images/home/article-1.jpg",
+    image: "/images/home/article-1.jpg",
   },
   {
     id: 2,
@@ -41,7 +41,7 @@ export const articles = [
     },
     // image:
     //   "https://images.unsplash.com/photo-1596495868845-63031cb496da?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxlZHVjYXRpb24lMjBzdHVkZW50cyUyMGxlYXJuaW5nJTIwdGVjaG5vbG9neXxlbnwxfHx8fDE3NTY4MjI4Mjd8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-    image: "/ai/images/home/article-2.jpg",
+    image: "/images/home/article-2.jpg",
   },
   {
     id: 3,
@@ -63,6 +63,6 @@ export const articles = [
     },
     // image:
     //   "https://images.unsplash.com/photo-1737644467636-6b0053476bb2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxyb2JvdCUyMGFydGlmaWNpYWwlMjBpbnRlbGxpZ2VuY2UlMjBmdXR1cmV8ZW58MXx8fHwxNzU2ODIyODMxfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-    image: "/ai/images/home/article-3.jpg",
+    image: "/images/home/article-3.jpg",
   },
 ];
