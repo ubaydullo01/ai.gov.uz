@@ -2,8 +2,16 @@
 import { AnimatedCounter } from "@/components/shared";
 import { TLocale } from "@/types";
 import { motion } from "framer-motion";
-import { Award, Building2, LineChart, Sparkles, Users } from "lucide-react";
+import {
+  Award,
+  BriefcaseBusiness,
+  Building2,
+  LineChart,
+  Sparkles,
+  Users,
+} from "lucide-react";
 import { useLocale } from "next-intl";
+import { HomePageData } from "../../../constants";
 
 export const StatisticsSection = () => {
   const locale = useLocale() as TLocale;
@@ -40,7 +48,7 @@ export const StatisticsSection = () => {
         </motion.div>
 
         {/* Stats Grid */}
-        <div className="grid md:grid-cols-4 gap-8 text-center">
+        <div className="grid md:grid-cols-5 gap-8 text-center">
           {/* 1. AI Readiness Index */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -55,7 +63,7 @@ export const StatisticsSection = () => {
               <AnimatedCounter end={50} />
             </div>
             <div className="text-gray-600">
-              {locale === "ru" && "в AI Readiness Index к 2030"}
+              {locale === "ru" && "ТОП-50 в AI Readiness Index к 2030"}
               {locale === "uz" && "AI Readiness Index TOP-50, 2030 gacha"}
               {locale === "en" && "AI Readiness Index TOP-50 by 2030"}
             </div>
@@ -97,7 +105,7 @@ export const StatisticsSection = () => {
               <Users className="text-white" size={28} />
             </div>
             <div className="text-3xl text-blue-600 mb-2">
-              <AnimatedCounter end={1000} />
+              <AnimatedCounter end={1000} suffix="+" />
             </div>
             <div className="text-gray-600">
               {locale === "ru" && "Подготовка специалистов по ИИ"}
@@ -117,12 +125,31 @@ export const StatisticsSection = () => {
               <Building2 className="text-white" size={28} />
             </div>
             <div className="text-3xl text-purple-600 mb-2">
-              <AnimatedCounter end={13} />
+              <AnimatedCounter end={13} suffix="+" />
             </div>
             <div className="text-gray-600">
               {locale === "ru" && "Университетов с ИИ программами"}
               {locale === "uz" && "AI dasturlari bo‘lgan universitetlar"}
               {locale === "en" && "Universities with AI programs"}
+            </div>
+          </motion.div>
+
+          {/* 5. 86 projects */}
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 1.0 }}
+            className="group"
+          >
+            <div className="w-16 h-16 bg-gradient-to-r from-yellow-500 to-yellow-600 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+              <BriefcaseBusiness className="text-white" size={28} />
+            </div>
+            <div className="text-3xl text-purple-600 mb-2">
+              <AnimatedCounter end={86} suffix="+" />
+            </div>
+            <div className="text-gray-600">
+              {HomePageData[locale].stats.projects.label}
             </div>
           </motion.div>
         </div>

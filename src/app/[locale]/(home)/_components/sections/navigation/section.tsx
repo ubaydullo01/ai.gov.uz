@@ -1,6 +1,7 @@
 "use client";
 import {
   Card,
+  CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
@@ -40,7 +41,7 @@ export const NavigationSection = () => {
                 className="cursor-pointer hover:shadow-lg transition-all duration-200 border-0 bg-white shadow-md"
                 onClick={() => router.push(`/${key}`)}
               >
-                <CardHeader className="text-center">
+                <CardContent className="text-center p-6">
                   <div className="mx-auto w-12 h-12 bg-gradient-to-r from-blue-100 to-emerald-100 rounded-full flex items-center justify-center mb-4">
                     {key === "news" && (
                       <Newspaper className="text-blue-600" size={24} />
@@ -60,7 +61,7 @@ export const NavigationSection = () => {
                   </div>
                   <CardTitle className="text-lg">{nav.title}</CardTitle>
                   <CardDescription>{nav.description}</CardDescription>
-                </CardHeader>
+                </CardContent>
               </Card>
             </motion.div>
           )

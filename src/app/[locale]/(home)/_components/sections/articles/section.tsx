@@ -2,8 +2,8 @@
 import { Badge } from "@/components/ui/badge";
 import {
   Card,
+  CardContent,
   CardDescription,
-  CardHeader,
   CardTitle,
 } from "@/components/ui/card";
 import { TLocale } from "@/types";
@@ -34,8 +34,9 @@ export const ArticlesSection = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 * index }}
             whileHover={{ scale: 1.02 }}
+            className="h-full"
           >
-            <Card className="hover:shadow-lg transition-all duration-200 border-0 bg-white shadow-md">
+            <Card className="hover:shadow-lg transition-all h-full duration-200 border-0 bg-white shadow-md">
               <div className="aspect-video relative">
                 <Image
                   src={article.image}
@@ -45,12 +46,15 @@ export const ArticlesSection = () => {
                   className="w-full h-full object-cover rounded-t-lg"
                 />
               </div>
-              <CardHeader>
+              <CardContent>
                 <div className="flex items-center justify-between mb-2">
                   <Badge variant="secondary" className="text-xs">
                     {article.category[locale]}
                   </Badge>
-                  <span className="text-xs text-gray-500 flex items-center" suppressHydrationWarning>
+                  <span
+                    className="text-xs text-gray-500 flex items-center"
+                    suppressHydrationWarning
+                  >
                     <Calendar size={12} className="mr-1" />
                     {new Date(article.date).toLocaleDateString()}
                   </span>
@@ -61,7 +65,7 @@ export const ArticlesSection = () => {
                 <CardDescription className="line-clamp-3">
                   {article.excerpt[locale]}
                 </CardDescription>
-              </CardHeader>
+              </CardContent>
             </Card>
           </motion.div>
         ))}
