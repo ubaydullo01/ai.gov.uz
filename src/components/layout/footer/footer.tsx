@@ -7,12 +7,12 @@ export const Footer = () => {
 
   return (
     <footer className="bg-white border-t border-gray-100 mt-16">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div className="grid md:grid-cols-4 gap-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 pb-12">
+        <div className="grid md:grid-cols-3 gap-8">
           <div>
             <div className="flex items-center space-x-2 mb-4">
-              <div className="w-6 h-6 bg-gradient-to-r from-blue-500 to-emerald-500 rounded-md flex items-center justify-center">
-                <span className="text-white text-xs">AI</span>
+              <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-emerald-500 rounded-md flex items-center justify-center">
+                <span className="text-white font-medium text-sm">AI</span>
               </div>
               <span className="text-gray-900">
                 {currentLanguage === "ru"
@@ -22,7 +22,7 @@ export const Footer = () => {
                   : "AI Uzbekistan"}
               </span>
             </div>
-            <p className="text-gray-600 text-sm">
+            <p className="text-gray-600 text-sm max-w-[210px]">
               {currentLanguage === "ru"
                 ? "Развитие искусственного интеллекта в Узбекистане"
                 : currentLanguage === "uz"
@@ -39,7 +39,28 @@ export const Footer = () => {
                 ? "Bo'limlar"
                 : "Sections"}
             </h3>
-            <ul className="space-y-2 text-sm">
+            <ul className="space-y-2 grid grid-cols-2 text-sm">
+              <li>
+                <Link href={"/"} className="text-gray-600 hover:text-blue-600">
+                  {currentLanguage === "ru"
+                    ? "Главная"
+                    : currentLanguage === "uz"
+                    ? "Bosh sahifa"
+                    : "Home"}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href={"/uzbekistan-ai"}
+                  className="text-gray-600 hover:text-blue-600"
+                >
+                  {currentLanguage === "ru"
+                    ? "ИИ Узбекистана"
+                    : currentLanguage === "uz"
+                    ? "O'zbekiston AI"
+                    : "Uzbekistan AI"}
+                </Link>
+              </li>
               <li>
                 <Link
                   href={"/news"}
@@ -50,6 +71,18 @@ export const Footer = () => {
                     : currentLanguage === "uz"
                     ? "Yangiliklar"
                     : "News"}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href={"/science"}
+                  className="text-gray-600 hover:text-blue-600"
+                >
+                  {currentLanguage === "ru"
+                    ? "Наука"
+                    : currentLanguage === "uz"
+                    ? "Fan"
+                    : "Science"}
                 </Link>
               </li>
               <li>
@@ -75,57 +108,6 @@ export const Footer = () => {
                     ? "Loyihalar"
                     : "Projects"}
                 </Link>
-              </li>
-              <li>
-                <Link
-                  href={"library"}
-                  className="text-gray-600 hover:text-blue-600"
-                >
-                  {currentLanguage === "ru"
-                    ? "Библиотека"
-                    : currentLanguage === "uz"
-                    ? "Kutubxona"
-                    : "Library"}
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="text-gray-900 mb-4">
-              {currentLanguage === "ru"
-                ? "Ресурсы"
-                : currentLanguage === "uz"
-                ? "Resurslar"
-                : "Resources"}
-            </h3>
-            <ul className="space-y-2 text-sm">
-              <li>
-                <a href="#" className="text-gray-600 hover:text-blue-600">
-                  {currentLanguage === "ru"
-                    ? "Документы"
-                    : currentLanguage === "uz"
-                    ? "Hujjatlar"
-                    : "Documents"}
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-600 hover:text-blue-600">
-                  {currentLanguage === "ru"
-                    ? "API"
-                    : currentLanguage === "uz"
-                    ? "API"
-                    : "API"}
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-600 hover:text-blue-600">
-                  {currentLanguage === "ru"
-                    ? "Поддержка"
-                    : currentLanguage === "uz"
-                    ? "Yordam"
-                    : "Support"}
-                </a>
               </li>
             </ul>
           </div>

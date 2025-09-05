@@ -1,3 +1,5 @@
+import { BookOpen, Brain, FlaskConical, Folder, Newspaper } from "lucide-react";
+
 export const HomePageData = {
   ru: {
     hero: {
@@ -23,19 +25,30 @@ export const HomePageData = {
       },
     ],
     navigation: {
-      news: { title: "Новости", description: "Последние события в мире ИИ" },
+      "uzbekistan-ai": {
+        title: "ИИ Узбекистана",
+        description: "Развитие ИИ в стране",
+        icon: Brain,
+      },
+      news: {
+        title: "Новости",
+        description: "Последние события и обновления",
+        icon: Newspaper,
+      },
+      science: {
+        title: "Наука",
+        description: "Исследования и научные разработки",
+        icon: FlaskConical,
+      },
       education: {
         title: "Образование",
         description: "Курсы и программы обучения",
+        icon: BookOpen,
       },
-      projects: { title: "Проекты", description: "ИИ-инициативы в стране" },
-      library: {
-        title: "Библиотека",
-        description: "Статьи, исследования, материалы",
-      },
-      map: {
-        title: "Карта ИИ",
-        description: "Центры разработки по всей стране",
+      projects: {
+        title: "Проекты",
+        description: "Инициативы и разработки в области ИИ",
+        icon: Folder,
       },
     },
     latestArticles: "Последние статьи и события",
@@ -70,25 +83,30 @@ export const HomePageData = {
       },
     ],
     navigation: {
+      "uzbekistan-ai": {
+        title: "O'zbekiston AI",
+        description: "Mamlakatda sun'iy intellekt rivoji",
+        icon: Brain,
+      },
       news: {
         title: "Yangiliklar",
         description: "AI dunyosidagi so'nggi voqealar",
+        icon: Newspaper,
+      },
+      science: {
+        title: "Fan",
+        description: "Tadqiqotlar va ilmiy ishlanmalar",
+        icon: FlaskConical,
       },
       education: {
         title: "Ta'lim",
         description: "Kurslar va ta'lim dasturlari",
+        icon: BookOpen,
       },
       projects: {
         title: "Loyihalar",
         description: "Mamlakatdagi AI tashabbuslar",
-      },
-      library: {
-        title: "Kutubxona",
-        description: "Maqolalar, tadqiqotlar, materiallar",
-      },
-      map: {
-        title: "AI xaritasi",
-        description: "Butun mamlakat bo'ylab rivojlanish markazlari",
+        icon: Folder,
       },
     },
     latestArticles: "So'nggi maqolalar va voqealar",
@@ -125,22 +143,30 @@ export const HomePageData = {
       },
     ],
     navigation: {
-      news: { title: "News", description: "Latest events in AI world" },
+      "uzbekistan-ai": {
+        title: "Uzbekistan AI",
+        description: "AI development in the country",
+        icon: Brain,
+      },
+      news: {
+        title: "News",
+        description: "Latest events and updates",
+        icon: Newspaper,
+      },
+      science: {
+        title: "Science",
+        description: "Research and scientific developments",
+        icon: FlaskConical,
+      },
       education: {
         title: "Education",
         description: "Courses and training programs",
+        icon: BookOpen,
       },
       projects: {
         title: "Projects",
-        description: "AI initiatives in the country",
-      },
-      library: {
-        title: "Library",
-        description: "Articles, research, materials",
-      },
-      map: {
-        title: "AI Map",
-        description: "Development centers across the country",
+        description: "AI initiatives and developments",
+        icon: Folder,
       },
     },
     latestArticles: "Latest articles and events",
