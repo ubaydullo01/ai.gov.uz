@@ -32,7 +32,7 @@ const Education = () => {
       <Card />
       <Statistics />
       <StartCourse />
-      <div className="relative w-screen left-1/2 right-1/2 -mx-[50vw] border-t border-gray-300 my-10" />
+      <div className="w-screen border-t border-gray-300 my-10" />
 
       <AiStudyBanner uStudy />
       <Card uStudy />
