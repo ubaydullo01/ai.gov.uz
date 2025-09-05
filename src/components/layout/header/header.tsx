@@ -43,13 +43,13 @@ export const Header = () => {
                   ? "AI O'zbekiston"
                   : "AI Uzbekistan"}
               </h1>
-              <p className="text-[14px] text-gray-500">
+              {/* <p className="text-[14px] text-gray-500">
                 {currentLanguage === "ru"
                   ? "Развитие искусственного интеллекта"
                   : currentLanguage === "uz"
                   ? "Sun'iy intellekt rivojlanishi"
                   : "Artificial Intelligence Development"}
-              </p>
+              </p> */}
             </div>
           </div>
 
