@@ -32,7 +32,7 @@ const Education = () => {
       <Card />
       <Statistics />
       <StartCourse />
-      <div className="w-screen border-t border-gray-300 my-10" />
+      <div className="w-full border-t border-gray-300 my-10" />
 
       <AiStudyBanner uStudy />
       <Card uStudy />
