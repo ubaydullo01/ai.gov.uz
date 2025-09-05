@@ -21,18 +21,18 @@ export const Header = () => {
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
           <div className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-emerald-500 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-sm">AI</span>
+            <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-emerald-500 rounded-lg flex items-center justify-center">
+              <span className="text-white font-bold text-[14px]">AI</span>
             </div>
             <div>
-              <h1 className="text-lg text-gray-900">
+              <h1 className="text-lg/[1.2] text-gray-900">
                 {currentLanguage === "ru"
                   ? "ИИ Узбекистан"
                   : currentLanguage === "uz"
                   ? "AI O'zbekiston"
                   : "AI Uzbekistan"}
               </h1>
-              <p className="text-xs text-gray-500">
+              <p className="text-[14px] text-gray-500">
                 {currentLanguage === "ru"
                   ? "Развитие искусственного интеллекта"
                   : currentLanguage === "uz"
@@ -53,7 +53,7 @@ export const Header = () => {
                 <Link
                   key={idx}
                   href={link}
-                  className={`text-sm hover:text-blue-600 transition-colors duration-200 ${
+                  className={`text-[16px] hover:text-blue-600 transition-colors duration-200 ${
                     pathname === page.path
                       ? "text-blue-600 font-medium"
                       : "text-gray-600"

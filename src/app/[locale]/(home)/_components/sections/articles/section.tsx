@@ -36,7 +36,7 @@ export const ArticlesSection = () => {
             whileHover={{ scale: 1.02 }}
             className="h-full"
           >
-            <Card className="hover:shadow-lg transition-all h-full duration-200 border-0 bg-white shadow-md">
+            <Card className="hover:shadow-lg transition-all duration-200 border-0 bg-white shadow-md min-h-[380px]">
               <div className="aspect-video relative">
                 <Image
                   src={article.image}
