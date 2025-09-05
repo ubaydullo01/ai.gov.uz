@@ -35,7 +35,7 @@ export const LanguageSelector = () => {
           key={lang.code}
           disabled={isPending}
           onClick={() => handleLanguageChange(lang.code)}
-          className={`px-2 py-1 text-[16px] rounded-md transition-colors duration-200 ${
+          className={`px-2 py-1 text-sm rounded-md transition-colors duration-200 ${
             locale === lang.code
               ? "bg-white text-blue-600 shadow-sm font-medium"
               : "text-gray-600 hover:text-gray-900"
