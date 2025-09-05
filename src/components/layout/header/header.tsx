@@ -8,19 +8,30 @@ import Link from "next/link";
 import { useState } from "react";
 import { navItems } from "./constants";
 import { MobileMenu } from "./mobile";
+import { useRouter } from "next/navigation";
 
 export const Header = () => {
   const currentLanguage = useLocale();
 
   const { pathname } = useDecodedPathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const locale = useLocale();
+  const router = useRouter();
+
+  const handleLogoClick = () => {
+    router.push("/" + locale);
+    setIsMenuOpen(false);
+  };
 
   return (
     <nav className="bg-white/95 backdrop-blur-sm border-b border-gray-100 sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
-          <div className="flex items-center space-x-2">
+          <div
+            onClick={handleLogoClick}
+            className="flex items-center space-x-2 cursor-pointer"
+          >
             <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-emerald-500 rounded-lg flex items-center justify-center">
               <span className="text-white font-bold text-[14px]">AI</span>
             </div>
